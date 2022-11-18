@@ -67,6 +67,12 @@ body.Teams {
   /* サイズ */
   width: 400px;
 
+  /* 位置 */
+  position: absolute;
+  top: -5%;
+  left: 90%;
+  z-index: -1;
+
   /* 背景 */
   background-color: var(--Content_Color);
 
@@ -88,34 +94,29 @@ body.Teams {
   opacity: 1;
   transform: scale(1);
   transition-duration: 1s;
-}
 
-#help_overview {
+  /* 位置 */
   z-index: 2;
-  position: absolute;
-  top: 65px;
-  left: 25px;
 }
 
-#help_service {
-  z-index: 3;
-  position: absolute;
-  top: 480px;
-  left: 25px;
+.help_content.active#help_overview {
+  top: 8%;
+  left: 2%;
 }
 
-#help_text {
-  z-index: 2;
-  position: absolute;
-  top: 200px;
+.help_content.active#help_service {
+  top: 50%;
+  left: 2%;
+}
+
+.help_content.active#help_text {
+  top: 25%;
   left: calc(50% - 225px);
 }
 
-#help_output {
-  z-index: 2;
-  position: absolute;
-  top: 460px;
-  right: 25px;
+.help_content.active#help_output {
+  top: 50%;
+  left: calc(100% - 400px - 4%);
 }
 
 
@@ -124,6 +125,7 @@ body.Teams {
 #notification {
   /* 初期位置 */
   transform: translate(-1000px, 0px);
+  z-index: 3;
 
   /* 背景 */
   background-color: var(--Content_Color);
