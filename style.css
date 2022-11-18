@@ -69,8 +69,8 @@ body.Teams {
 
   /* 位置 */
   position: absolute;
-  top: -5%;
-  left: 90%;
+  top: -200px;
+  left: 100%;
   z-index: -1;
 
   /* 背景 */
@@ -84,7 +84,7 @@ body.Teams {
   padding: 15px;
 
   /* アニメーション */
-  opacity: 0;
+  opacity: 1;
   transform: scale(0.8);
   transition-duration: 1s;
 }
