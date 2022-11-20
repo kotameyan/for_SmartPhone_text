@@ -2,10 +2,10 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
 
 :root {
-  --Default_color: grey;
+  --Default_color: #393E46;
   --LINE_Color: #06C775;
   --Teams_Color: #464EB8;
-  --Content_Color: #f5f5f5;
+  --Content_Color: #F4F4F4;
   --Shadow: 0px 0px 15px 0px #787878;
 }
 
