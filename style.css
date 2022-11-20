@@ -69,8 +69,6 @@ body.Teams {
 
   /* 位置 */
   position: absolute;
-  top: -200px;
-  left: 100%;
   z-index: -1;
 
   /* 背景 */
@@ -84,8 +82,8 @@ body.Teams {
   padding: 15px;
 
   /* アニメーション */
-  opacity: 1;
-  transform: scale(0.8);
+  opacity: 0;
+  transform: scale(0.1);
   transition-duration: 1s;
 }
 
@@ -99,22 +97,22 @@ body.Teams {
   z-index: 2;
 }
 
-.help_content.active#help_overview {
+.help_content#help_overview {
   top: 8%;
   left: 2%;
 }
 
-.help_content.active#help_service {
+.help_content#help_service {
   top: 50%;
   left: 2%;
 }
 
-.help_content.active#help_text {
+.help_content#help_text {
   top: 25%;
   left: calc(50% - 225px);
 }
 
-.help_content.active#help_output {
+.help_content#help_output {
   top: 50%;
   left: calc(100% - 400px - 4%);
 }
