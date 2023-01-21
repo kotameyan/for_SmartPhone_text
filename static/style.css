@@ -1,0 +1,323 @@
+/********************* 共通部分 *********************/
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
+
+:root {
+  --Default_color: grey;
+  --LINE_Color: #06C775;
+  --Teams_Color: #464EB8;
+  --Content_Color: #F4F4F4;
+  --Shadow: 0px 0px 15px 0px #787878;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--Default_color);
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+body.LINE {
+  background-color: var(--LINE_Color);
+}
+
+body.Teams {
+  background-color: var(--Teams_Color);
+}
+
+body.custom {
+  background-color: darkgoldenrod;
+}
+
+.button {
+  /* サイズ */
+  height: 45px;
+  width: 45px;
+
+  /* 背景 */
+  background-color: var(--Content_Color);
+
+  /* 枠 */
+  border: 0px;
+  border-radius: 50px;
+  box-shadow: var(--Shadow);
+
+  /* アニメーション */
+  transition-duration: 0.5s;
+}
+
+.button:hover {
+  /* アニメーション */
+  transform: scale(1.15);
+  transition-duration: 0.5s;
+}
+
+.button:active {
+  /* アニメーション */
+  transform: scale(0.9);
+  transition-duration: 0.5s;
+}
+
+.icon {
+  height: 60%;
+}
+
+.button_margin {
+  margin: 20px;
+}
+
+
+
+/********************* ヘルプ *********************/
+.help_content {
+  /* サイズ */
+  width: 400px;
+
+  /* 位置 */
+  position: absolute;
+  z-index: -1;
+
+  /* 背景 */
+  background-color: var(--Content_Color);
+
+  /* 枠 */
+  border-radius: 15px;
+  box-shadow: var(--Shadow);
+  /* テキスト */
+  text-align: center;
+  padding: 15px;
+
+  /* アニメーション */
+  opacity: 0;
+  transform: scale(0.1);
+  transition-duration: 1s;
+}
+
+.help_content.active {
+  /* アニメーション */
+  opacity: 1;
+  transform: scale(1);
+  transition-duration: 1s;
+
+  /* 位置 */
+  z-index: 2;
+}
+
+.help_content#help_overview {
+  top: 8%;
+  left: 2%;
+}
+
+.help_content#help_service {
+  top: 50%;
+  left: 2%;
+}
+
+.help_content#help_text {
+  top: 25%;
+  left: calc(50% - 225px);
+}
+
+.help_content#help_output {
+  top: 50%;
+  left: calc(100% - 400px - 4%);
+}
+
+
+
+/********************* 通知 *********************/
+#notification {
+  /* 初期位置 */
+  transform: translate(-1000px, 0px);
+  z-index: 3;
+
+  /* 背景 */
+  background-color: var(--Content_Color);
+
+  /* サイズ */
+  min-width: 300px;
+  width: fit-content;
+  height: 45px;
+
+  /* 枠 */
+  border-radius: 15px;
+  box-shadow: var(--Shadow);
+  /* テキスト */
+  padding: 0 15px;
+  text-align: center;
+  line-height: 45px;
+  font-size: 15px;
+}
+
+#notification.slide {
+  animation-name: slide_in, slide_out;
+  animation-duration: 0.5s, 0.5s;
+  animation-delay: 0s, 1.8s;
+  animation-fill-mode: forwards, forwards;
+}
+
+@keyframes slide_in {
+  0% {
+    transform: translate(-1000px, 0px);
+  }
+
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes slide_out {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  100% {
+    transform: translate(-1000px, 0px);
+  }
+}
+
+
+
+/********************* レイアウト *********************/
+.layout {
+  /* サイズ */
+  width: calc(100vw - 16px);
+  height: calc(100vh - 16px);
+
+  /* グリッド */
+  display: grid;
+  grid:
+    "header header header" 1fr "leftSide body rightSide" 15fr "footer footer footer" 1fr / 1fr 700px 1fr;
+  gap: 8px;
+}
+
+@media (max-width: 960px) {
+  .layout {
+    /* サイズ */
+    width: calc(100vw - 16px);
+    height: calc(100vh - 16px);
+
+    /* グリッド */
+    display: grid;
+    grid:
+      "header header header" 1fr "leftSide body rightSide" 15fr "footer footer footer" 1fr / 85px 1fr 85px;
+    gap: 8px;
+  }
+}
+
+.header {
+  grid-area: header;
+}
+
+.leftSide {
+  grid-area: leftSide;
+}
+
+.body {
+  grid-area: body;
+}
+
+.rightSide {
+  grid-area: rightSide;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+
+
+/**************** grid-area: header *****************/
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+/************** grid-area: leftSide ****************/
+.leftSide {
+  /* flexbox */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+
+
+/***************** grid-area: body ******************/
+#textarea_sentence {
+  /* サイズ */
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+
+  /* 背景 */
+  background-color: var(--Content_Color);
+  z-index: 1;
+
+  /* 枠 */
+  resize: none;
+  outline: 0;
+  border: 0px;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: var(--Shadow);
+  /* テキスト */
+  font-size: 20px;
+  font-family: 'Noto Sans JP', sans-serif;
+
+  /* アニメーション */
+  transform: scale(1);
+  transition-duration: 0.2s;
+}
+
+#textarea_sentence.active {
+  /* アニメーション */
+  transform: scale(1.05);
+  transition-duration: 0.2s;
+}
+
+
+
+/************** grid-area: rightSide ****************/
+.rightSide {
+  /* flexbox */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+#format_icon {
+  transform: rotate(90deg);
+}
+
+
+
+/************** grid-area: footer ****************/
+.footer {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+}
+
+#yahoo_credit {
+  /* サイズ */
+  width: 250px;
+  height: 26px;
+
+  /* 背景 */
+  background-color: var(--Content_Color);
+
+  /* 枠 */
+  border-radius: 15px;
+  box-shadow: var(--Shadow);
+  /* テキスト */
+  text-align: center;
+  padding: 5px;
+}
+
+#yahoo_credit:hover {
+  /* アニメーション */
+  transform: scale(1.05);
+  transition-duration: 0.5s;
+}

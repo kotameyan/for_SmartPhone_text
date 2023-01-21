@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for SmartPhone text</title>
+
+    <!-- CSS、JSの適用 -->
+    <link rel="stylesheet" href="/static/style.css">
+    <script defer src="/static/script.js"></script>
+
+    <!-- アイコン -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/icon/logo.ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/icon/logo.ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/icon/logo.ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/icon/logo.ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/icon/logo.ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/icon/logo.ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/icon/logo.ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/icon/logo.ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/icon/logo.ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/static/icon/logo.ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/icon/logo.ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/icon/logo.ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/icon/logo.ico/favicon-16x16.png">
+    <link rel="manifest" href="/static/icon/logo.ico/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<body id="body_tag">
+    <section class="layout">
+        <div class="header">
+            <!-- 隠れている要素 -->
+            <div id="notification"></div>
+            <div id="help_overview" class="help_content">
+                <h3>[ for SmartPhone text ]</h3>
+                <p>スマートフォンから見ても見やすい文章を作成する<br>ために、文章の幅を調整するアプリケーションです。<br>YahooAPI(日本語形態素解析)を使用しています。</p>
+            </div>
+
+            <!-- 見えている要素 -->
+            <button class="button" id="help_button">
+                <img src="/static/icon/help.svg" alt="ヘルプ" class="icon" id="help_icon">
+            </button>
+        </div>
+
+        <div class="leftSide">
+            <!-- 隠れている要素 -->
+            <div id="help_service" class="help_content">
+                <h3>step1, サービス選択</h3>
+                <p>何のアプリの文章を作成するのか選択します。</p>
+            </div>
+
+            <!-- 見えている要素 -->
+            <!-- 未実装 -->
+            <!-- <button class="button button_margin" id="custom_button">
+                <img src="/static/icon/tune.svg" alt="カスタム用" class="icon" id="custom_icon">
+            </button> -->
+            <button class="button button_margin" id="LINE_button">
+                <img src="/static/icon/LINE.png" alt="LINE用" class="icon" id="LINE_icon">
+            </button>
+            <button class="button button_margin" id="Teams_button">
+                <img src="/static/icon/Teams.png" alt="Teams用" class="icon" id="Teams_icon">
+            </button>
+        </div>
+
+        <div class="body">
+            <!-- 隠れている要素 -->
+            <div id="help_text" class="help_content">
+                <h3>step2, 文章作成</h3>
+                <p>ここで文章を作成します。</p>
+            </div>
+
+            <!-- 見えている要素 -->
+            <textarea name="textarea_sentence" id="textarea_sentence" placeholder="リロードすると、文章と幅設定がリセットされます"></textarea>
+        </div>
+
+        <div class="rightSide">
+            <!-- 隠れている要素 -->
+            <div id="help_output" class="help_content">
+                <h3>step3, 出力</h3>
+                <p>上のボタンで文章を整形し、<br>下のボタンで文章をコピーし、<br>アプリに貼り付けて送信します。</p>
+            </div>
+
+            <!-- 見えている要素 -->
+            <button class="button button_margin" id="format_button">
+                <img src="/static/icon/format.svg" alt="文章整形" class="icon" id="format_icon">
+            </button>
+            <button class="button button_margin" id="copy_button">
+                <img src="/static/icon/copy.svg" alt="コピー" class="icon" id="copy_icon">
+            </button>
+        </div>
+
+        <div class="footer">
+            <!-- Yahoo API クレジット表記 -->
+            <div id="yahoo_credit"><a href="https://developer.yahoo.co.jp/sitemap/">Webサービス by Yahoo! JAPAN</a></div>
+        </div>
+    </section>
+</body>
+
+</html>
